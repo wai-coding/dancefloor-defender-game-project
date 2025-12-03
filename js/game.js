@@ -136,7 +136,7 @@ class Game {
         this.lives--;
         this.livesElement.innerText = this.lives;
 
-        // If no lives left → Game Over
+        // If no lives left = Game Over
         if (this.lives <= 0) {
           this.gameIsOver = true; // stop checking further and game will end
         }

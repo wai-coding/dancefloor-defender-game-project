@@ -14,7 +14,7 @@
       <!-- START SCREEN (shown before the game begins and includes game intro window and instructions) -->
       <div id="game-intro">
 
-        <!-- Container that mimics the game window (500x600) and gives the start screen a consistent layout -->
+        <!-- Container that mimics the game window (500x600) -->
         <div id="intro-game-area">
 
           <!-- Start panel with title, instructions, and start button -->
@@ -43,19 +43,19 @@
         </div>
       </div>
 
-      <!-- GAME CONTAINER (shown during gameplay and holds the HUD (score) and the game-screen) -->
+      <!-- GAME CONTAINER (shown during gameplay and holds the HUD (score/level/lives) and the game-screen) -->
       <div id="game-container">
 
+        <!-- Main game area where Player, Enemies and Bullets are rendered -->
         <div id="game-screen">
 
-          <!-- HUD section (score display) -->
+          <!-- HUD section (score/level/lives display) -->
           <div id="hud">
             Score: <span id="score">0</span>
             Level: <span id="level">1</span>
             Lives: <span id="lives">3</span>
           </div>
 
-          <!-- Main game area where Player, Enemies and Bullets are rendered -->
         </div>
 
       </div>
@@ -63,7 +63,7 @@
       <!-- GAME OVER SCREEN (shown when the player loses) -->
       <div id="game-end">
 
-        <!-- Game Over window (uses the same 500x600 layout as the intro-game-area) -->
+        <!-- Game Over window (uses the same layout as the intro-game-area) -->
         <div id="end-game-area">
 
           <div class="end-panel">

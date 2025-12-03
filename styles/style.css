@@ -251,11 +251,11 @@ main {
 
 #hud {
   position: absolute;
-  top: 10px;         /* distance from the top of the background */
-  left: 10px;        /* distance from the left */
+  top: 10px; /* distance from the top of the background */
+  left: 10px; /* distance from the left */
   font-size: 18px;
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 4px #000; /* readable over any background */
-  z-index: 10;       /* ensure HUD stays on top of enemies */
+  z-index: 10; /* ensure HUD stays on top of enemies */
 }

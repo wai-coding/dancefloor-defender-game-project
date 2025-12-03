@@ -31,8 +31,7 @@ window.onload = function () {
 
     // Shooting (SPACE) - create a new Bullet
     if (event.code === "Space") {
-      const bulletLeft =
-        ourGame.player.left + ourGame.player.width / 2 - 3; // center bullet
+      const bulletLeft = ourGame.player.left + ourGame.player.width / 2 - 3; // center bullet
       const bulletTop = ourGame.player.top - 10; // start above the player
 
       const newBullet = new Bullet(ourGame.gameScreen, bulletLeft, bulletTop);
