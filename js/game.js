@@ -15,6 +15,10 @@ class Game {
     this.level = 1;
     this.levelElement = document.getElementById("level");
 
+    // Lives system (player health)
+    this.lives = 3;
+    this.livesElement = document.getElementById("lives");
+
     // Core game objects
     this.player = null;
     this.enemies = [];
@@ -60,6 +64,9 @@ class Game {
 
     this.score = 0;
     this.scoreElement.innerText = this.score;
+
+    this.lives = 3;
+    this.livesElement.innerText = this.lives;
 
     // Start the game loop at 60 FPS
     this.gameInterval = setInterval(() => {
@@ -120,8 +127,22 @@ class Game {
 
       // Collision: enemy hits the player = game over
       if (enemy.didCollide(this.player)) {
-        this.gameIsOver = true;
-        break; // stop checking further and game will end
+        // Remove the enemy that hit the player
+        enemy.remove();
+        this.enemies.splice(i, 1);
+        i--;
+
+        // Decrease player lives
+        this.lives--;
+        this.livesElement.innerText = this.lives;
+
+        // If no lives left → Game Over
+        if (this.lives <= 0) {
+          this.gameIsOver = true; // stop checking further and game will end
+        }
+
+        // Skip to next enemy
+        continue;
       }
 
       // Enemy goes off the screen (bottom) = remove it and add score
