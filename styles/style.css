@@ -269,3 +269,31 @@ main {
   -webkit-user-select: none; /* Safari / iOS */
   -ms-user-select: none; /* Older Edge/IE */
 }
+
+/* THEME TOGGLE BUTTON (light/dark mode switch) */
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: none;
+
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+
+  opacity: 0.85;
+  z-index: 5;
+
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}

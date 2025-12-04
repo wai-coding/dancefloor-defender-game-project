@@ -6,6 +6,7 @@
     <!-- Page title and CSS import -->
     <title>Dancefloor Defender</title>
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
   </head>
 
   <body>
@@ -17,10 +18,13 @@
         <!-- Container that mimics the game window (500x600) -->
         <div id="intro-game-area">
 
+          <!-- Theme toggle button (light/dark mode) -->
+          <button class="theme-toggle">turn off the lights</button>
+
           <!-- Start panel with title, instructions, and start button -->
           <div class="start-panel">
             <h1>Dancefloor Defender</h1>
-            <p style="margin: 4px 0 10px 0; opacity: 0.5; font-size: 12px;">v0.1</p>
+            <p style="margin: 4px 0 10px 0; opacity: 0.5; font-size: 12px;">v7</p>
             <!-- TEMPORARY VERSION INDICATOR -->
             <h2>Defend the club from bad DJs.</h2>
 
@@ -35,7 +39,7 @@
 
               <div class="control-row">
                 <span class="key">SPACE</span>
-                <span class="action">Shoot vinyl discs</span>
+                <span class="action">Shoot vinyls</span>
               </div>
             </div>
 
@@ -50,6 +54,9 @@
 
         <!-- Main game area where Player, Enemies and Bullets are rendered -->
         <div id="game-screen">
+
+          <!-- Theme toggle button (light/dark mode) -->
+          <button class="theme-toggle">TURN OFF THE LIGHTS</button>
 
           <!-- HUD section (score/level/lives display) -->
           <div id="hud">
@@ -67,6 +74,9 @@
 
         <!-- Game Over window (uses the same layout as the intro-game-area) -->
         <div id="end-game-area">
+
+          <!-- Theme toggle button (light/dark mode) -->
+          <button class="theme-toggle">TURN OFF THE LIGHTS</button>
 
           <div class="end-panel">
             <h1>Game Over</h1>

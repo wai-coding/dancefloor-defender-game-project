@@ -5,6 +5,50 @@ window.onload = function () {
   const restartButton = document.getElementById("restart-button");
   const gameScreenElement = document.getElementById("game-screen");
 
+  // Elements that share the same background (light/dark)
+  const introGameArea = document.getElementById("intro-game-area");
+  const endGameArea = document.getElementById("end-game-area");
+
+  // All theme toggle buttons (one in each screen)
+  const themeButtons = document.querySelectorAll(".theme-toggle");
+
+  // Paths for light and dark backgrounds
+  const LIGHT_BG = "./images/background-light.png";
+  const DARK_BG = "./images/background-dark.png";
+
+  // State: false = light mode (default), true = dark mode
+  let isDarkMode = false;
+
+  // Apply current theme to all relevant elements
+  function applyTheme() {
+    const bgUrl = isDarkMode ? `url("${DARK_BG}")` : `url("${LIGHT_BG}")`;
+
+    // Update backgrounds on intro, game, and end screens
+    if (introGameArea) introGameArea.style.backgroundImage = bgUrl;
+    if (gameScreenElement) gameScreenElement.style.backgroundImage = bgUrl;
+    if (endGameArea) endGameArea.style.backgroundImage = bgUrl;
+
+    // Update button text according to current mode
+    themeButtons.forEach((btn) => {
+      btn.textContent = isDarkMode
+        ? "TURN ON THE LIGHTS"
+        : "TURN OFF THE LIGHTS";
+    });
+  }
+
+  // Attach click listeners to all theme buttons
+  themeButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      isDarkMode = !isDarkMode; // toggle state
+      applyTheme();
+      // Remove focus from the buttom. (Fixes the space bar clicking the buttom problem)
+      btn.blur();
+    });
+  });
+
+  // Initial theme (light) – ensures button text is correct on load
+  applyTheme();
+
   // Start game
   startButton.addEventListener("click", function () {
     ourGame = new Game();
