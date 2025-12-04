@@ -52,6 +52,8 @@ main {
   border-radius: 6px;
 
   overflow: hidden; /* Hide any game objects that move outside the visible play area (Fix for enemies appearing outside the game area) */
+  
+  touch-action: none; /* Disable default touch actions (scroll, zoom) inside the game area (Fix for zoom while playing on mobile) */
 }
 
 /* INTRO GAME WINDOW */
